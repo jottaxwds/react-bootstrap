@@ -109,7 +109,12 @@ const propTypes = {
   /**
    * @private
    */
-  onMouseLeave: PropTypes.func
+  onMouseLeave: PropTypes.func,
+
+  /*
+   * Zoqer added: support for className information:
+   */
+  className: PropTypes.string
 };
 
 const defaultProps = {
@@ -334,7 +339,8 @@ class Dropdown extends React.Component {
                 disabled,
                 open,
                 role,
-                bsClass
+                bsClass,
+                className
               });
             case MENU_ROLE:
               return this.renderMenu(child, {
@@ -343,7 +349,8 @@ class Dropdown extends React.Component {
                 pullRight,
                 bsClass,
                 onSelect,
-                rootCloseEvent
+                rootCloseEvent,
+                className
               });
             default:
               return child;

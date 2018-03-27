@@ -12,6 +12,7 @@ const propTypes = {
   bsSize: PropTypes.string,
   title: PropTypes.node.isRequired,
   noCaret: PropTypes.bool,
+  className: PropTypes.string,
 
   // Override generated docs from <Dropdown>.
   /**
@@ -31,7 +32,12 @@ class DropdownButton extends React.Component {
 
     return (
       <Dropdown {...dropdownProps} bsSize={bsSize} bsStyle={bsStyle}>
-        <Dropdown.Toggle {...toggleProps} bsSize={bsSize} bsStyle={bsStyle}>
+        <Dropdown.Toggle
+          {...toggleProps}
+          {...dropdownProps}
+          bsSize={bsSize}
+          bsStyle={bsStyle}
+        >
           {title}
         </Dropdown.Toggle>
 

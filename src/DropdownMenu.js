@@ -20,6 +20,7 @@ const propTypes = {
   onClose: PropTypes.func,
   labelledBy: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onSelect: PropTypes.func,
+  className: PropTypes.string,
   rootCloseEvent: PropTypes.oneOf(['click', 'mousedown'])
 };
 
@@ -122,7 +123,7 @@ class DropdownMenu extends React.Component {
         <ul
           {...elementProps}
           role="menu"
-          className={`${className} ${classNames(className, classes)}`}
+          className={`${classNames(className, classes)}`}
           aria-labelledby={labelledBy}
         >
           {ValidComponentChildren.map(children, child =>
